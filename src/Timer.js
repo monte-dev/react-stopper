@@ -9,7 +9,7 @@ const Timer = ({ value }) => {
 		const formattedH = `${h.toString().padStart(2, '0')}`;
 		const formattedM = `${m.toString().padStart(2, '0')}`;
 		const formattedS = `${s.toString().padStart(2, '0')}`;
-		const formattedMs = `${ms.toString().padStart(3, '0')}`;
+		const formattedMs = `${ms.toString().padStart(1, '0')}`;
 
 		const formattedTime = `${formattedH}:${formattedM}:${formattedS}.${formattedMs}`;
 
@@ -18,6 +18,6 @@ const Timer = ({ value }) => {
 		return formattedTime;
 	};
 
-	return <div className={styles.display}>{convertTime(value)}</div>;
+	return <h1 className={styles.display}>{convertTime(value)}</h1>;
 };
 export default Timer;

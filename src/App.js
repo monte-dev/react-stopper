@@ -8,9 +8,11 @@ const App = () => {
 
 	const startWatch = () => {
 		if (timer === null) {
+			// add Date.now to improve accuracy over setInterval manual increments
+			const appTime = Date.now() - time;
 			setTimer(
 				setInterval(() => {
-					setTime((prevTime) => prevTime + 1);
+					setTime(Date.now() - appTime);
 				}, 1)
 			);
 		}
