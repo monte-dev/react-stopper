@@ -1,8 +1,7 @@
 import styles from './Timer.module.scss';
 
-const Timer = (ms) => {
+const Timer = ({ value }) => {
 	const convertTime = (ms) => {
-		ms = 1;
 		const s = Math.floor(ms / 1000) % 60;
 		const m = Math.floor(s / 60) % 60;
 		const h = Math.floor(m / 60);
@@ -19,6 +18,6 @@ const Timer = (ms) => {
 		return formattedTime;
 	};
 
-	return <div className={styles.display}>{convertTime(ms)}</div>;
+	return <div className={styles.display}>{convertTime(value)}</div>;
 };
 export default Timer;
